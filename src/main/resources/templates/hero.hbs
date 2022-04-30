@@ -1,0 +1,16 @@
+
+{{> layout.hbs}}
+    <h1>Hero list!</h1>
+
+    {{#if heroes}}
+    {{#each heroes }}
+    <p>Current post:</p>
+    <p>{{ content }}</p>
+    {{/each}}
+    {{else}}
+    <p>No Hero!</p>
+    {{/if}}
+
+
+
+
