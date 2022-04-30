@@ -1,6 +1,6 @@
 SET MODE PostgresSQL;
 
-CREATE TABLE IF NOT EXISTS heroes (
+CREATE TABLE IF NOT EXISTS hero (
     id int PRIMARY KEY auto_increment,
     name VARCHAR,
     age INT,

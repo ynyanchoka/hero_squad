@@ -20,15 +20,19 @@ public class Hero {
         this.age=age;
         this.power=power;
         this.weakness = weakness;
-//        instances.add(this);
+        instances.add(this);
         this.id =instances.size();
 
 
     }
 
-//    public static ArrayList<Hero> getAllInstances() {
-//        return instances;
-//    }
+    public static ArrayList<Hero> getAllInstances() {
+        return instances;
+    }
+
+    public static void clearAllHeroes() {
+        instances.clear();
+    }
 
 
     public String getName() {
@@ -46,7 +50,24 @@ public class Hero {
     public String getWeakness() {
         return this.weakness;
     }
-    public static int getId() {
+    public static int setId( int id) {
         return id;
     }
+    public int getId() {
+        return id;
+    }
+
+    public static Hero findById(int id) {
+        try {
+            return instances.get(id-1);
+        } catch (IndexOutOfBoundsException exception) {
+            return null;
+        }
+    }
+
+    public static void deleteHero() {
+        instances.clear();
+    }
+
+
 }

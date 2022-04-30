@@ -5,10 +5,19 @@
     {{#if heroes}}
     {{#each heroes }}
     <p>Your heroes:</p>
+    <ul class="card-text">
+        <li><span>Age: </span>{{name}}</li>
+        <li><span>Age: </span>{{age}}</li>
+        <li><span>Power: </span>{{power}}</li>
+        <li><span>Weakness: </span>{{weakness}}</li>
+    </ul>
     <p>{{ content }}</p>
     {{/each}}
     {{else}}
-    <p>No Hero!</p>
+    <p>No Heroes!</p>
+    {{/if}}
+    {{#if heroes}}
+        <a href="/heroes/delete"><button class="btn-info">Delete All Heroes</button></a>
     {{/if}}
 
 

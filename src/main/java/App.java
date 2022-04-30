@@ -1,8 +1,11 @@
+import dao.Sql2oHeroDao;
 import models.Hero;
 import models.Squad;
+import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +14,9 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
+        String connectionString = "jdbc:h2:~/herosquad.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        Sql2o sql2o = new Sql2o(connectionString, "", "");
+        Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
 
        //home
         get("/", (request, response) -> {
@@ -42,6 +48,27 @@ public class App {
             model.put("heroes", heroes);
             return new ModelAndView(model, "herosuccess.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/heroes", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Hero> heroes = Hero.getAllInstances();
+            model.put("heroes", heroes);
+            return new ModelAndView(model, "hero.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+
+        //get: delete all heroes
+
+        get("/heroes/delete", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfHeroToDelete = Integer.parseInt(request.params("id"));
+            Hero deleteTask = Hero.findById(idOfHeroToDelete);
+            deleteTask.deleteHero();
+            model.put("heroes",Hero.getAllInstances());
+            return new ModelAndView(model, "hero.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
         post("/squad", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
