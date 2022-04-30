@@ -5,6 +5,7 @@ By Ymelda Monari
 
 ## Table of contents
 + [Description](#Description)
++ [Project resources](#project-resources)
 + [Behaviour Driven Development (BDDs](#BDD)
 + [Setup/Installation Requirements](#setupinstallation-requirements)
 + [Technologies used](#technologies-used)
@@ -15,6 +16,10 @@ By Ymelda Monari
 ## Description
 This is an application that allows a user to recruit a team of superheros who fight any ills in the society and assigns the superheros to a squad of their choosing.The user has to define the heros age,size and superpower they have. In the squad section the user has to input the maxium size of the squad,name and the cause they are fighting for.
 
+## Project resources
+The following is a live-link to the project's site
+
+Link : `.....`
 
 ## Behaviour Driven Development (BDD)
 ### Input
