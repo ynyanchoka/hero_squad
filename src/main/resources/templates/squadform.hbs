@@ -4,13 +4,16 @@
 
     <form action="">
         <div class="form-group">
-            <input class="form-control " type="text" placeholder="Squad's name">
+            <label for="SquadName">Name</label>
+            <input class="form-control " type="text" name="squadName" id="squadName" placeholder="Squad's name">
         </div>
         <div class="form-group">
-            <input class="form-control" type="text" placeholder="Squad's cause">
+            <label for="cause">Cause</label>
+            <input class="form-control" type="text" name="cause" id="cause" placeholder="Squad's cause">
         </div>
         <div class="form-group">
-            <input class="form-control" type="text" placeholder="Squad's maximum size">
+            <label for="size">Squad size</label>
+            <input class="form-control" type="number" name="size" id="size" placeholder="Squad's size">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

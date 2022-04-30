@@ -45,4 +45,12 @@ class SquadTest {
         assertEquals(10, squad.getSize());
 
     }
+
+    @Test
+    public void all_returnsAllInstancesOfSquad_true() throws Exception {
+        Squad firstSquad = new Squad ("Environmentalists", "Conserve environment",10);
+        Squad secondSquad = new Squad ("Police", "Crime",7);
+        assertTrue(Squad.getAllInstances().contains(firstSquad));
+        assertTrue(Squad.getAllInstances().contains(secondSquad));;
+    }
 }
