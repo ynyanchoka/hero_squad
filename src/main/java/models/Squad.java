@@ -12,7 +12,15 @@ public class Squad {
 
     }
 
-    public String getName() {
+    public String getSquadName() {
         return this.squadName;
+    }
+
+    public String getCause() {
+        return this.cause;
+    }
+
+    public int getSize() {
+        return this.size;
     }
 }

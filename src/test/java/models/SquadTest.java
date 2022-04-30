@@ -28,7 +28,21 @@ class SquadTest {
     @Test
     public void SquadInstantiatesWithName_true() throws Exception {
         Squad squad = new Squad ("Environmentalists", "Conserve environment",10);
-        assertEquals("Environmentalists", squad.getName());
+        assertEquals("Environmentalists", squad.getSquadName());
+
+    }
+//    cause
+    @Test
+    public void SquadInstantiatesWithCause_true() throws Exception {
+        Squad squad = new Squad ("Environmentalists", "Conserve environment",10);
+        assertEquals("Conserve environment", squad.getCause());
+
+    }
+
+    @Test
+    public void SquadInstantiatesWithSize_true() throws Exception {
+        Squad squad = new Squad ("Environmentalists", "Conserve environment",10);
+        assertEquals(10, squad.getSize());
 
     }
 }
