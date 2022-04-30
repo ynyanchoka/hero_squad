@@ -39,7 +39,7 @@ public class App {
             String weakness=request.queryParams("weakness");
             Hero heroes = new Hero(name, age, power,weakness);
             model.put("heroes", heroes);
-            return new ModelAndView(model, "success.hbs");
+            return new ModelAndView(model, "herosuccess.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
