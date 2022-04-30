@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 public class Hero {
+
    private  String name;
     private  int age;
     private  String power;
@@ -26,5 +27,19 @@ public class Hero {
     }
 
 
+    public String getName() {
+        return this.name;
+    }
 
+    public int getAge() {
+        return this.age;
+    }
+
+    public String getPower() {
+        return this.power;
+    }
+
+    public String getWeakness() {
+        return this.weakness;
+    }
 }
