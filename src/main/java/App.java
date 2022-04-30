@@ -34,12 +34,12 @@ public class App {
         post("/heroes", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             String name = request.queryParams("name");
-            int age=Integer.parseInt(request.queryParams("age"));
+            int age = Integer.parseInt(request.queryParams("age"));
             String power=request.queryParams("power");
             String weakness=request.queryParams("weakness");
             Hero heroes = new Hero(name, age, power,weakness);
             model.put("heroes", heroes);
-            return new ModelAndView(model, "herosuccess.hbs");
+            return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }

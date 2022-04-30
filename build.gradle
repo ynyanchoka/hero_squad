@@ -6,7 +6,7 @@ plugins {
 group 'models'
 version '1.0-SNAPSHOT'
 
-mainClassName = 'models.App'
+mainClassName = 'App'
 
 sourceCompatibility = 1.8
 

@@ -43,7 +43,7 @@ public class HeroTest {
     }
     //    age
     @Test
-    public void HeroInstantiatesWithAge_true() throws Exception {
+    public void HeroInstantiatesWithAge_true()  {
         Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
         assertEquals(40, hero.getAge());
 
