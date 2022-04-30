@@ -1,0 +1,11 @@
+{{> layout.hbs}}
+<h1>Squad list!</h1>
+
+{{#if squad}}
+    {{#each squad }}
+        <p>Your Squad:</p>
+        <p>{{ content }}</p>
+    {{/each}}
+{{else}}
+    <p>No Hero!</p>
+{{/if}}

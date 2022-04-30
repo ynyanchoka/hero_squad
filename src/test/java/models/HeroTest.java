@@ -12,8 +12,6 @@ import org.junit.jupiter.api.Test;
 
 public class HeroTest {
 
-
-
     @BeforeEach
     public void setUp() {
     }
