@@ -23,7 +23,7 @@ Link : `.....`
 
 ## Behaviour Driven Development (BDD)
 ### Input
-- User fills a form that specifies the heros details
+- User fills a form that specifies the hero's details
 ### Output
 - Output is stored in a database.
 
@@ -32,7 +32,7 @@ Link : `.....`
   git clone 'https://github.com/ynyanchoka/Ceaser-cipher.git'
 - Navigate to the directory:
   cd hero_squad
-- Open the directory with your preffered text editor.
+- Open the directory with your preferred text editor.
 
 ## Technologies used
 + IntelliJ IDEA
