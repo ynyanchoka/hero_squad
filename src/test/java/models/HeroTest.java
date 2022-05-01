@@ -3,7 +3,6 @@ package models;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,50 +12,44 @@ import org.junit.jupiter.api.Test;
 public class HeroTest {
 
     @BeforeEach
-    public void setUp() {
+    public void setUp()  throws Exception{
     }
 
     @AfterEach
-    public void tearDown() {
+    public void tearDown() throws Exception {
     }
     @Test
     public void NewHeroObjectGetsCorrectlyCreated() throws Exception {
-        Hero hero = new Hero ("Thanos", 20, "Laser eyes","Running");
+        Hero hero = new Hero ("Thanos", 20, "Laser eyes","Running", 1);
         assertTrue (hero instanceof Hero);
     }
 
-    @Test
-    public void all_returnsAllInstancesOfHero_true() throws Exception {
-        Hero firstHero = new Hero("Thanos", 20, "Laser eyes", "Running");
-        Hero secondHero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
-        assertTrue(Hero.getAllInstances().contains(firstHero));
-        assertTrue(Hero.getAllInstances().contains(secondHero));;
-    }
+
 //    name
     @Test
     public void HeroInstantiatesWithName_true() throws Exception {
-        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper", 2);
         assertEquals("Mathai", hero.getName());
 
     }
     //    age
     @Test
     public void HeroInstantiatesWithAge_true()  {
-        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper", 2);
         assertEquals(40, hero.getAge());
 
     }
     //    power
     @Test
     public void HeroInstantiatesWithPower_true() throws Exception{
-        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper", 2);
         assertEquals("Environment conservation", hero.getPower());
 
     }
     //   weakness
     @Test
     public void HeroInstantiatesWithWeakness_true() throws Exception{
-        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper", 2);
         assertEquals("Poor time keeper", hero.getWeakness());
 
     }

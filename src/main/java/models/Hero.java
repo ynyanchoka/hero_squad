@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
+
 public class Hero {
 
-   private  String name;
+    private  String name;
     private  int age;
     private  String power;
     private  String weakness;
@@ -14,12 +15,11 @@ public class Hero {
     private int squadId;
 
 
-
     private static ArrayList<Hero> instances = new ArrayList<>();
 
 
 //    constructor
-    public Hero (String name,int age,String power,String weakness){
+    public Hero (String name, int age, String power, String weakness, int squadId){
         this.name=name;
         this.age=age;
         this.power=power;
@@ -30,7 +30,6 @@ public class Hero {
 
 
     }
-
     public int getSquadId() {
         return squadId;
     }
@@ -82,6 +81,32 @@ public class Hero {
     public static void deleteHero() {
         instances.clear();
     }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hero hero = (Hero) o;
+        return getAge() == hero.getAge() &&
+                getName().equals(hero.getName()) &&
+                getPower().equals(hero.getPower()) &&
+                getWeakness().equals(hero.getWeakness());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getAge(), getPower(), getWeakness());
+    }
+
+//    public int getSquadId() {
+//        return squadId;
+//    }
+//
+//    public void setSquadId(int squadId) {
+//        this.squadId = squadId;
+//    }
 
 
 }

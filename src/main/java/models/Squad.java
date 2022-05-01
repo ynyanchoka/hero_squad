@@ -1,7 +1,9 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
+import java.util.Objects;
+
 
 public class Squad {
     private String squadName;
@@ -43,4 +45,23 @@ public class Squad {
     public int getId() {
         return id;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Squad squad = (Squad) o;
+        return getSize() == squad.getSize() &&
+                getSquadName().equals(squad.getSquadName()) &&
+                getCause().equals(squad.getCause());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSquadName(), getCause(), getSize());
+    }
+
+
+
+
+
 }

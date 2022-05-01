@@ -1,9 +1,14 @@
+
+
 import dao.Sql2oHeroDao;
+import dao.SquadDao;
 import models.Hero;
 import models.Squad;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,13 +17,14 @@ import java.util.Map;
 import static spark.Spark.*;
 
 public class App {
+
     public static void main(String[] args) {
         staticFileLocation("/public");
         String connectionString = "jdbc:h2:~/herosquad.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "", "");
         Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
 
-       //home
+        //home
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
 
@@ -33,7 +39,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         //squad form
-        get( "/squads/new", (request, response) -> {
+        get( "/squad/new", (request, response) -> {
             Map<String, Object>  model= new HashMap <String,Object>();
             return new ModelAndView( new HashMap (), "squadform.hbs");
         }, new HandlebarsTemplateEngine());
@@ -44,7 +50,9 @@ public class App {
             int age = Integer.parseInt(request.queryParams("age"));
             String power=request.queryParams("power");
             String weakness=request.queryParams("weakness");
-            Hero heroes = new Hero(name, age, power,weakness);
+//            String squad=request.queryParams("squad");
+            int squad = Integer.parseInt(request.queryParams("squad"));
+            Hero heroes = new Hero(name, age, power,weakness,squad);
             model.put("heroes", heroes);
             return new ModelAndView(model, "herosuccess.hbs");
         }, new HandlebarsTemplateEngine());
@@ -88,5 +96,13 @@ public class App {
             model.put("squad", squad);
             return new ModelAndView(model, "squadsuccess.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/squad", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("squad", Squad.getAllInstances());
+            return new ModelAndView(model, "squad.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
     }
 }

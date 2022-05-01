@@ -9,16 +9,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class SquadTest {
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws Exception {
     }
 
     @AfterEach
-    public void tearDown() {
+    public void tearDown() throws Exception {
     }
 
-    @Test
-    public void name() {
-    }
+
     @Test
     public void NewSquadObjectGetsCorrectlyCreated() throws Exception {
        Squad squad = new Squad ("Environmentalists", "Conserve environment",10);
@@ -46,11 +44,4 @@ class SquadTest {
 
     }
 
-    @Test
-    public void all_returnsAllInstancesOfSquad_true() throws Exception {
-        Squad firstSquad = new Squad ("Environmentalists", "Conserve environment",10);
-        Squad secondSquad = new Squad ("Police", "Crime",7);
-        assertTrue(Squad.getAllInstances().contains(firstSquad));
-        assertTrue(Squad.getAllInstances().contains(secondSquad));;
-    }
 }

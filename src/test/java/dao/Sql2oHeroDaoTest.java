@@ -6,30 +6,17 @@ import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import models.Hero;
 import org.junit.jupiter.api.Test;
-
-
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Sql2oHeroDaoTest {
 
-    private Sql2oHeroDao heroDao;
-    private Connection conn;
+    private static Sql2oHeroDao heroDao;
+    private static Sql2oSquadDao squadDao;
 
-    @Before
-    public void setUp() throws Exception {
-        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o sql2o = new Sql2o(connectionString, "", "");
-        heroDao = new Sql2oHeroDao(sql2o);
-        conn = sql2o.open();
-    }
+    private static Connection conn;
 
-    @After
-    public void tearDown() throws Exception {
-        conn.close();
-    }
+
 
     @Test
     public void addingHeroesById() throws Exception {
@@ -40,44 +27,58 @@ public class Sql2oHeroDaoTest {
     }
 
     @Test
-    public void existingTasksCanBeFoundById() throws Exception {
-        Hero hero = new Hero("Thanos", 20, "Laser eyes", "Running");
-        Hero secondHero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
-        Hero foundHero = Hero.findById(1);
-        Hero foundSecondHero = Hero.findById(2);
-        assertEquals(hero, foundHero);
-        assertEquals(secondHero, foundSecondHero);
-    }
-
-    @Test
-    public void addedTasksAreReturnedFromgetAll() throws Exception {
+    public void existingHeroesCanBeFoundById() throws Exception {
         Hero hero = setupNewHero();
         heroDao.add(hero);
-        assertEquals(1, heroDao.getAllInstances().size());
+        Hero foundHero = heroDao.findById(hero.getId());
+        assertEquals(hero, foundHero);
     }
+
+//    @Test
+//    public void addedHeroesAreReturnedFromgetAll() throws Exception {
+//        Hero hero = setupNewHero();
+//        heroDao.add(hero);
+//        assertEquals(1, heroDao.getAll().size());
+//    }
 //
 //
 //
     @Test
-    public void deleteByIdDeletesCorrectTask() throws Exception {
+    public void deleteByIdDeletesCorrectHero() throws Exception {
         Hero hero = setupNewHero();
         heroDao.add(hero);
         heroDao.deleteById(hero.getId());
-        assertEquals(1, heroDao.getAllInstances().size());
+        assertFalse(heroDao.getAll().contains(hero));
     }
 
     @Test
     public void clearAll() throws Exception {
         Hero hero = setupNewHero();
-        Hero otherHero = new Hero("Thanos", 20, "Laser eyes", "Running");
+        Hero otherHero = setupNewHero();
         heroDao.add(hero);
         heroDao.add(otherHero);
-        int daoSize = heroDao.getAllInstances().size();
         heroDao.clearAllHeroes();
-        assertTrue(daoSize > 0 && daoSize > heroDao.getAllInstances().size()); //this is a little overcomplicated, but illustrates well how we might use `assertTrue` in a different way.
+        assertFalse(heroDao.getAll().contains(hero));
+        assertFalse(heroDao.getAll().contains(otherHero));
+        assertEquals(0,heroDao.getAll().size());
+    }
+
+    @Before
+    public static void setUp() throws Exception {
+        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        Sql2o sql2o = new Sql2o(connectionString, "", "");
+        heroDao = new Sql2oHeroDao(sql2o);
+        squadDao = new Sql2oSquadDao(sql2o);
+
+        conn = sql2o.open();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        conn.close();
     }
         public Hero setupNewHero(){
-            return new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+            return new Hero("Mathai", 40, "Environment conservation", "Poor time keeper", 1);
         }
 
 

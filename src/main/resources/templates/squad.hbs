@@ -1,11 +1,60 @@
 {{> layout.hbs}}
-<h1>Squad list!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>{{squad.squadName}}</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3>Max Size</h3><br>
+                        <p>{{squad.size}}</p>
+                        <h3>Cause</h3><br>
+                        <p>{{squad.cause}}</p><br>
+                        <div class="row" id="delete-button">
+                            <a href="/squads/{{squad.id}}/delete" class="btn btn-danger">Delete this squad</a><br>
+                            <a href="/squads/{{squad.id}}/heroes/new" id="hero-add" class="btn btn-primary">Add hero to this squad</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-{{#if squad}}
-    {{#each squad }}
-        <p>Your Squad:</p>
-        <p>{{ content }}</p>
-    {{/each}}
-{{else}}
-    <p>No Hero!</p>
-{{/if}}
+            <div class="col-md-8">
+                <h3>Heroes in this Squad</h3>
+                <hr><br>
+                <div class="row">
+                    {{#if heroes}}
+                        {{#each heroes}}
+                            <div class="col-md-6" id="squad-hero">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-text">{{squadname}}</h3>
+                                    </div>
+                                    <div class="card-footer">
+                                        <ul class="nav nav-pills card-header-pills">
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/heroes/{{id}}" class="btn btn-primary">Details</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    {{else}}
+                        <div class="jumbotron">
+                            <h1>No Heroes in this squad!!</h1>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+

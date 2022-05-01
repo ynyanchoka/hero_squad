@@ -1,9 +1,12 @@
 {{#partial "content"}}
-
-    <h1>Hero squad</h1>
-    <p>Welcome to Hero Squad where we fight ills in the society.</p>
-    <p>This web application allows you to create a hero or heroin with certain superpowers to fight crimes.You can only add one hero or heroin to one squad and can never be in two or more squads.Ω</p>
-    <p><a href='/hero' >start</a></p>
+    <div class="card">
+        <h5 class="card-header">Hero Squad</h5>
+        <div class="card-body">
+            <h5 class="card-title">Welcome to Hero Squad where we fight ills in the society</h5>
+            <p class="card-text">This web application allows you to create a hero or heroin with certain superpowers to fight crimes.You can only add one hero or heroin to one squad and can never be in two or more squads.</p>
+            <a href="/squad/new" class="btn btn-dark">Get started</a>
+        </div>
+    </div>
 {{/partial}}
 
 {{> layout.hbs}}

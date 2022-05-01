@@ -8,7 +8,7 @@ import java.util.List;
 public interface HeroDao {
 
 
-    List<Hero> getAllInstances();
+    List<Hero> getAll();
 
     // CREATE
     void add(Hero hero);
