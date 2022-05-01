@@ -7,6 +7,8 @@ public class Squad {
     private String squadName;
     private String cause;
     private int size;
+
+    private int id;
     private static ArrayList<Squad> instances = new ArrayList<>() ;
 
 
@@ -32,5 +34,13 @@ public class Squad {
 
     public int getSize() {
         return this.size;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 }

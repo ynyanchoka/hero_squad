@@ -1,12 +1,13 @@
 package dao;
 
 import models.Hero;
+import models.Squad;
 
 import java.util.List;
 
 public interface HeroDao {
 
-    // LIST
+
     List<Hero> getAllInstances();
 
     // CREATE

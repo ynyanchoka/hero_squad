@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Sql2oHeroDaoTest {
 
-    public Sql2oHeroDao heroDao;
+    private Sql2oHeroDao heroDao;
     private Connection conn;
 
     @Before

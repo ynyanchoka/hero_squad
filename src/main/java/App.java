@@ -56,6 +56,15 @@ public class App {
             return new ModelAndView(model, "hero.hbs");
         }, new HandlebarsTemplateEngine());
 
+        //get: show an individual hero
+        get("/heroes/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfHeroToFind = Integer.parseInt(request.params("id"));
+            Hero foundHero = Hero.findById(idOfHeroToFind);
+            model.put("hero", foundHero);
+            return new ModelAndView(model, "hero.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
 
         //get: delete all heroes
