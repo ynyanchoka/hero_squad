@@ -13,13 +13,15 @@ public class Hero {
     private  String weakness;
     private static int id;
     private int squadId;
+    private boolean squadMember;
+
 
 
     private static ArrayList<Hero> instances = new ArrayList<>();
 
 
 //    constructor
-    public Hero (String name, int age, String power, String weakness, int squadId){
+    public Hero (String name, int age, String power, String weakness){
         this.name=name;
         this.age=age;
         this.power=power;
@@ -79,7 +81,11 @@ public class Hero {
     }
 
     public static void deleteHero() {
-        instances.clear();
+        instances.remove(id-1);
+    }
+
+    public void updateHeroStatus(boolean squadMember){
+        this.squadMember=squadMember;
     }
 
 
@@ -98,6 +104,10 @@ public class Hero {
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getAge(), getPower(), getWeakness());
+    }
+
+    public boolean isSquadMember() {
+        return squadMember;
     }
 
 //    public int getSquadId() {

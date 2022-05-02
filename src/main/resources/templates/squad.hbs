@@ -1,56 +1,38 @@
 {{> layout.hbs}}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>{{squad.squadName}}</h2>
-                    </div>
-                    <div class="card-body">
-                        <h3>Max Size</h3><br>
-                        <p>{{squad.size}}</p>
-                        <h3>Cause</h3><br>
-                        <p>{{squad.cause}}</p><br>
-                        <div class="row" id="delete-button">
-                            <a href="/squads/{{squad.id}}/delete" class="btn btn-danger">Delete this squad</a><br>
-                            <a href="/squads/{{squad.id}}/heroes/new" id="hero-add" class="btn btn-primary">Add hero to this squad</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-8">
-                <h3>Heroes in this Squad</h3>
-                <hr><br>
-                <div class="row">
-                    {{#if heroes}}
-                        {{#each heroes}}
-                            <div class="col-md-6" id="squad-hero">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h3 class="card-text">{{squadname}}</h3>
-                                    </div>
-                                    <div class="card-footer">
-                                        <ul class="nav nav-pills card-header-pills">
+<div class="card">
+    <div class="card-body">
+        <h2>Your squad</h2>
 
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/heroes/{{id}}" class="btn btn-primary">Details</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        {{/each}}
-                    {{else}}
-                        <div class="jumbotron">
-                            <h1>No Heroes in this squad!!</h1>
-                        </div>
-                    {{/if}}
-                </div>
-            </div>
-        </div>
+
+        {{#if squad}}
+
+            {{#each squad}}
+                <ul >
+                    <li><span>Squad Name: </span>{{squadName}}</li>
+                    <li><span>Cause: </span>{{cause}}</li>
+                    <li><span>Squad size: </span>{{size}}</li>
+                </ul>
+                <a href="/squad/{{id}}"><button class="btn-dark" id="heroView">View Squad Heroes</button></a>
+
+            {{/each}}
+
+        {{else}}
+            <p id="noSquads">No Squad!</p>
+        {{/if}}
 
     </div>
+</div>
+{{#if squad}}
+    <a href="/squad/delete"><button class="btn-dark" id="delete">Delete All Squads</button></a>
+{{/if}}
+
+
+
+
+
+
+
 
 
 
