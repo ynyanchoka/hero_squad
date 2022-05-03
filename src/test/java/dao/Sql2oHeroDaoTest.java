@@ -34,15 +34,15 @@ public class Sql2oHeroDaoTest {
         assertEquals(hero, foundHero);
     }
 
-//    @Test
-//    public void addedHeroesAreReturnedFromgetAll() throws Exception {
-//        Hero hero = setupNewHero();
-//        heroDao.add(hero);
-//        assertEquals(1, heroDao.getAll().size());
-//    }
-//
-//
-//
+    @Test
+    public void addedHeroesAreReturnedFromgetAll() throws Exception {
+        Hero hero = setupNewHero();
+        heroDao.add(hero);
+        assertEquals(1, heroDao.getAll().size());
+    }
+
+
+
     @Test
     public void deleteByIdDeletesCorrectHero() throws Exception {
         Hero hero = setupNewHero();
