@@ -7,6 +7,7 @@ import java.util.Objects;
 
 public class Hero {
 
+    private final String squadName;
     private  String name;
     private  int age;
     private  String power;
@@ -18,14 +19,16 @@ public class Hero {
 
 
     private static ArrayList<Hero> instances = new ArrayList<>();
+    private Squad squad;
 
 
-//    constructor
-    public Hero (String name, int age, String power, String weakness){
+    //    constructor
+    public Hero (String name, int age, String power, String weakness,String squadName){
         this.name=name;
         this.age=age;
         this.power=power;
         this.weakness = weakness;
+        this.squadName = squadName;
         instances.add(this);
         this.id =instances.size();
         this.squadId = squadId;
@@ -35,6 +38,7 @@ public class Hero {
     public int getSquadId() {
         return squadId;
     }
+
 
     public void setSquadId(int squadId) {
         this.squadId = squadId;
@@ -48,6 +52,7 @@ public class Hero {
     public static void clearAllHeroes() {
         instances.clear();
     }
+
 
 
     public String getName() {
@@ -65,9 +70,12 @@ public class Hero {
     public String getWeakness() {
         return this.weakness;
     }
-    public static int setId( int id) {
-        return id;
+
+    public String getSquadName() {
+        return this.squadName;
     }
+
+
     public int getId() {
         return id;
     }
@@ -83,40 +91,36 @@ public class Hero {
     public static void deleteHero() {
         instances.remove(id-1);
     }
-
     public void updateHeroStatus(boolean squadMember){
         this.squadMember=squadMember;
     }
 
 
+    @Override
+    public String toString() {
+        return "Hero " + id + ": " + name + " " + age + " " + power + " " + weakness + " " + squadName;
+    }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Hero)) return false;
         Hero hero = (Hero) o;
-        return getAge() == hero.getAge() &&
-                getName().equals(hero.getName()) &&
-                getPower().equals(hero.getPower()) &&
-                getWeakness().equals(hero.getWeakness());
+        return age == hero.age && Objects.equals(squadName, hero.squadName) && Objects.equals(name, hero.name) && Objects.equals(power, hero.power) && Objects.equals(weakness, hero.weakness);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getAge(), getPower(), getWeakness());
+        return Objects.hash(squadName, name, age, power, weakness);
     }
 
-    public boolean isSquadMember() {
-        return squadMember;
+    public static int setId(int id) {
+        return id;
     }
 
-//    public int getSquadId() {
-//        return squadId;
-//    }
-//
-//    public void setSquadId(int squadId) {
-//        this.squadId = squadId;
-//    }
 
-
+    public void setSquad(Squad squad) {
+        this.squad = squad;
+    }
 }

@@ -1,24 +1,34 @@
 {{> layout.hbs}}
 
+
 <div class="card">
-    <h5 class="card-header">Create a superhero</h5>
+    <h5 class="card-header">Create a hero</h5>
     <div class="card-body">
         <form action="/heroes"  method="post">
-            <div class="form-group">
+            <div class="form-group mb-1">
                 <label for="name">Name</label>
-                <input class="form-control " type="text" name="name" id="name" placeholder="Hero's name">
+                <input class="form-control" type="text" name="name" id="name" placeholder="Hero's name" required>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-1">
                 <label for="age">Age</label>
-                <input class="form-control" type="number" name="age" id="age" placeholder="Hero's age">
+                <input class="form-control" type="number" name="age" id="age" placeholder="Hero's age" required>
             </div>
-            <div class="form-group">
-                <label for="power">Hero's special power </label>
-                <input class="form-control" type="text"  name="power" id="power"placeholder="Hero's special power">
+            <div class="form-group mb-1">
+                <label for="power">Special power </label>
+                <input class="form-control" type="text"  name="power" id="power"placeholder="Hero's special power" required>
             </div>
-            <div class="form-group">
-                <label for="weakness">Hero's weakness</label>
-                <input class="form-control" type="text" name="weakness" id="weakness" placeholder="Hero's weakness">
+            <div class="form-group mb-1">
+                <label for="weakness">Weakness</label>
+                <input class="form-control" type="text" name="weakness" id="weakness" placeholder="Hero's weakness" required>
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="squad">Squad</label>
+                <select class="form-control" id="squadName" name="squadName" required>
+                    {{#each squad}}
+                        <option value="{{this.squadName}}">{{this.squadName}}</option>
+                    {{/each}}
+                </select>
             </div>
 
             <button type="submit" class="btn btn-dark">Submit</button>
@@ -28,7 +38,11 @@
 
 
 
-<!--form.hbs.-->
+
+
+
+
+
 
 
 

@@ -17,10 +17,6 @@ public interface SquadDao {
 
     Squad findById(int id);
 
-//    //UPDATE
-//    void update(int id, String name);
-
-
     void deleteById(int id);
     void clearAllSquads();
     List<Hero> getAllHeroesBySquad(int squadId);

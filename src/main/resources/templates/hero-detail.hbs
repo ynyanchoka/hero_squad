@@ -4,12 +4,13 @@
         <h1>Hero list!</h1>
         {{#if heroes}}
             {{#each heroes }}
-                <p>Your heroes:</p>
+                <p>Your hero:</p>
                 <ul class="card-text">
                     <li><span>Name: </span>{{name}}</li>
                     <li><span>Age: </span>{{age}}</li>
                     <li><span>Power: </span>{{power}}</li>
                     <li><span>Weakness: </span>{{weakness}}</li>
+                    <li><span>Squad: </span>{{squadName}}</li>
                 </ul>
                 <p>{{ content }}</p>
             {{/each}}
@@ -17,10 +18,12 @@
             <p>No Heroes!</p>
         {{/if}}
         {{#if heroes}}
-            <a href="/heroes/delete"><button class="btn-info">Delete All Heroes</button></a>
+            <a href="/heroes/delete"><button class="btn btn-dark">Delete All Heroes</button></a>
         {{/if}}
     </div>
 </div>
+
+
 
 
 

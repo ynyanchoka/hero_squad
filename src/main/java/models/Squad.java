@@ -16,20 +16,16 @@ public class Squad {
     private static ArrayList<Squad> instances = new ArrayList<>() ;
 
 
-    public  Squad( String squadName, String cause,int size,ArrayList<Hero> heroes){
+    public  Squad( String squadName, String cause,int size){
         this.squadName = squadName;
         this.cause = cause;
         this.size= size;
         this.heroes=heroes;
         squadInstances.add(this);
         this.id = squadInstances.size();
-//        instances.add(this);
 
     }
 
-    public static ArrayList<Squad> getAllInstances() {
-        return instances;
-    }
 
     public static ArrayList<Squad> getSquadInstances() {
         return squadInstances;
@@ -81,8 +77,9 @@ public class Squad {
         return Objects.hash(getSquadName(), getCause(), getSize());
     }
 
-
-    public ArrayList<Hero> getHeroes() {
-        return this.heroes;
+    @Override
+    public String toString() {
+        return "Squad " + id + ": " + squadName + " " + cause + " " + size;
     }
+
 }

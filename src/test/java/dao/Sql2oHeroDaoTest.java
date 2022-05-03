@@ -78,7 +78,7 @@ public class Sql2oHeroDaoTest {
         conn.close();
     }
         public Hero setupNewHero(){
-            return new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+            return new Hero("Mathai", 40, "Environment conservation", "Poor time keeper","Champions");
         }
 
 

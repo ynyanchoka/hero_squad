@@ -6,4 +6,11 @@
   margin-top: 100px;
 }
 
+body {
+    background-image: url("../images/spartan-g5ee2dd21f_1920.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 500px;
+}
+
 

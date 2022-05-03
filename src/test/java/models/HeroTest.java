@@ -20,7 +20,7 @@ public class HeroTest {
     }
     @Test
     public void NewHeroObjectGetsCorrectlyCreated() throws Exception {
-        Hero hero = new Hero ("Thanos", 20, "Laser eyes","Running");
+        Hero hero = new Hero ("Thanos", 20, "Laser eyes","Running", "Villain");
         assertTrue (hero instanceof Hero);
     }
 
@@ -28,28 +28,28 @@ public class HeroTest {
 //    name
     @Test
     public void HeroInstantiatesWithName_true() throws Exception {
-        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper","Champions");
         assertEquals("Mathai", hero.getName());
 
     }
     //    age
     @Test
     public void HeroInstantiatesWithAge_true()  {
-        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper","Champions");
         assertEquals(40, hero.getAge());
 
     }
     //    power
     @Test
     public void HeroInstantiatesWithPower_true() throws Exception{
-        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper","Champions");
         assertEquals("Environment conservation", hero.getPower());
 
     }
     //   weakness
     @Test
     public void HeroInstantiatesWithWeakness_true() throws Exception{
-        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper");
+        Hero hero = new Hero("Mathai", 40, "Environment conservation", "Poor time keeper","Champions");
         assertEquals("Poor time keeper", hero.getWeakness());
 
     }
