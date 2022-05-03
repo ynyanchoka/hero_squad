@@ -1,10 +1,10 @@
 {{> layout.hbs}}
-<div class="card">
+<div class="card card justify-content-center align-self-center" style="font-family: 'Oleo Script Swash Caps', cursive;">
     <div class="card-body">
         <h1>Hero list!</h1>
         {{#if heroes}}
             {{#each heroes }}
-                <p>Your hero:</p>
+                <h3>Your hero:</h3>
                 <ul class="card-text">
                     <li><span>Name: </span>{{name}}</li>
                     <li><span>Age: </span>{{age}}</li>
@@ -15,7 +15,8 @@
                 <p>{{ content }}</p>
             {{/each}}
         {{else}}
-            <p>No Heroes!</p>
+            <h5>No Heroes!</h5>
+            <h5>Add heroes <a href="/heroes/new" style="color:white;" >&nbsp;here</a></h5>
         {{/if}}
         {{#if heroes}}
             <a href="/heroes/delete"><button class="btn btn-dark">Delete All Heroes</button></a>

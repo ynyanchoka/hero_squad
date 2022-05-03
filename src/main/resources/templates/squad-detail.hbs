@@ -2,22 +2,23 @@
 
 {{> layout.hbs}}
 
-<div class="card">
+<div class="card" style="font-family: 'Oleo Script Swash Caps', cursive;">
     <div class="card-body">
-        <h2>Your squad</h2>
+        <h1>Your squad</h1>
         {{#if squad}}
             {{#each squad}}
                 <div class="mb-2">
                     <ul>
-                        <li><span>Squad Name: </span>{{squadName}}</li>
-                        <li><span>Cause: </span>{{cause}}</li>
-                        <li><span>Squad size: </span>{{size}}</li>
+                        <lh5><span>Squad Name: </span>{{squadName}}</lh5>
+                        <h5><span>Cause: </span>{{cause}}</h5>
+                        <h5><span>Squad size: </span>{{size}}</h5>
                     </ul>
 <!--                    <a href="/squad/{{id}}"><button class="btn btn-dark" id="heroView">View Squad Heroes</button></a>-->
                 </div>
             {{/each}}
         {{else}}
-            <p id="noSquads">No Squad!</p>
+            <h5 id="noSquads">No Squad!</h5>
+            <h5>Add Squad<a href="/squad/new"  style="color:white;"> &nbsp;here </a></h5>
         {{/if}}
 
         {{#if squad}}
