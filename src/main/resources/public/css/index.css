@@ -5,14 +5,15 @@
   transition: 0.3s;
   border-radius: 5px;
   text-align: center;
-  margin-top: 200px;
+  
 }
 
 body {
     background-image: url("../images/268334.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 500px;
+    background-attachment:fixed;
+    -moz-background-size:cover;
 }
 .nav-item{
 color white;
@@ -24,6 +25,9 @@ background-color:rgb(40,42,44);
 
 nav .navbar-nav li a{
   color: white !important;
-  }
+}
+
+
+
 
 
