@@ -29,13 +29,7 @@ class Sql2oSquadDaoTest {
         assertNotEquals(originalSquadId, squad.getId());
     }
 
-    @Test
-    public void existingSquadCanBeFoundById() throws Exception {
-        Squad squad = setupNewSquad();
-        squadDao.add(squad);
-        Squad foundSquad = squadDao.findById(squad.getId());
-        assertEquals(squad, foundSquad);
-    }
+
 
     @Test
     public void addedSquadAreReturnedFromGetAll() throws Exception {
@@ -45,25 +39,7 @@ class Sql2oSquadDaoTest {
     }
 
 
-    @Test
-    public void deleteByIdDeletesCorrectSquad() throws Exception {
-        Squad squad = setupNewSquad();
-        squadDao.add(squad);
-        squadDao.deleteById(squad.getId());
-        assertEquals(0, squadDao.getAll().size());
-    }
 
-    @Test
-    public void clearAllClearsAllSquads() throws Exception {
-        Squad squad = setupNewSquad( );
-        Squad otherSquad = new Squad("Police", "Fight crime ",6 );
-        squadDao.add(squad);
-        squadDao.add(otherSquad);
-        squadDao.clearAllSquads();
-        assertFalse(squadDao.getAll().contains(squad));
-        assertFalse(squadDao.getAll().contains(otherSquad));
-        assertEquals(0,squadDao.getAll().size());
-    }
 
     @BeforeClass
     public static void setUp() throws Exception {
