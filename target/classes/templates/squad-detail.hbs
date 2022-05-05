@@ -1,0 +1,43 @@
+{{> layout.hbs}}
+
+{{> layout.hbs}}
+
+<div class="card" style="font-family: 'Oleo Script Swash Caps', cursive;">
+    <div class="card-body">
+
+        {{#if squad}}
+            {{#each squad}}
+                <h1>Your squad</h1>
+                <div class="mb-2">
+                    <ul>
+                        <lh5><span>Squad Name: </span>{{squadName}}</lh5>
+                        <h5><span>Cause: </span>{{cause}}</h5>
+                        <h5><span>Squad size: </span>{{size}}</h5>
+                    </ul>
+<!--                    <a href="/squad/{{id}}"><button class="btn btn-dark" id="heroView">View Squad Heroes</button></a>-->
+                </div>
+            {{/each}}
+        {{else}}
+            <h5 id="noSquads">No Squad!</h5>
+            <h5>Add Squad<a href="/squad/new"  style="color:white;"> &nbsp;here </a></h5>
+        {{/if}}
+
+        {{#if squad}}
+            <a href="/squad/delete"><button class="btn btn-dark mt-2" id="delete">Delete All Squads</button></a>
+        {{/if}}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
