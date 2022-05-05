@@ -1,0 +1,34 @@
+{{> layout.hbs}}
+
+
+
+<div class="card" style="font-family: 'Oleo Script Swash Caps', cursive;">
+    <h5 class="card-header">Create a squad</h5>
+    <div class="card-body">
+        <form action="/squad" method="post">
+            <div class="form-group">
+                <label for="SquadName">Name</label>
+                <input class="form-control " type="text" name="squadName" id="squadName" placeholder="Squad's name" required>
+            </div>
+            <div class="form-group">
+                <label for="cause">Cause</label>
+                <input class="form-control" type="text" name="cause" id="cause" placeholder="Squad's cause" required>
+            </div>
+            <div class="form-group">
+                <label for="size">Squad size</label>
+                <input class="form-control" type="number" name="size" id="size" placeholder="Squad's size" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

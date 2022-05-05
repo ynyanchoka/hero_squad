@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  margin-top: 100px;
+  width: 50rem;
+  margin-left: 18%;
+  margin-right: 18%;
+  width: auto;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.card{
+    margin-bottom: 2%;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 3px 2px black;
+    color:white;
+
+}
+
+.form-control {
+  background-color: #c4c4c4;
+  color: #c4c4c4;
+}
+
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ color:white;
+
+}
+.nav-link {
+ color: white;
+ font-family: 'Oleo Script', cursive;
+ font-size: 20px;
+}
+nav .navbar-nav li a{
+  color: white !important;
+  }
+
+body {
+    background-image: url("../images/wp8077102.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 500px;
+}
+body,html {
+  height: 100%;
+}
+.btn{
+background-color:rgb(40,42,44);
+}
+
+
+.menu {
+ display: flex;
+ gap: 3em;
+}
+.menu li:hover {
+ background-color: #4c9e9e;
+ border-radius: 5px;
+ transition: 0.3s ease;
+}
+.menu li {
+ padding: 5px 14px;
+}
+p{
+color:white;
+}
+h1{
+color:white;
+}
+
+
+
+
+
+
