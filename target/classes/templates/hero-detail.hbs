@@ -1,0 +1,38 @@
+{{> layout.hbs}}
+<div class="card " style="font-family: 'Oleo Script Swash Caps', cursive;">
+    <div class="card-body">
+        <h1>Hero list!</h1>
+        {{#if heroes}}
+            {{#each heroes }}
+                <h3>Your hero:</h3>
+                <ul class="card-text">
+                    <li><span>Name: </span>{{name}}</li>
+                    <li><span>Age: </span>{{age}}</li>
+                    <li><span>Power: </span>{{power}}</li>
+                    <li><span>Weakness: </span>{{weakness}}</li>
+                    <li><span>Squad: </span>{{squadName}}</li>
+                </ul>
+                <p>{{ content }}</p>
+            {{/each}}
+        {{else}}
+            <h5>No Heroes!</h5>
+            <h5>Add heroes <a href="/heroes/new" style="color:white;" >&nbsp;here</a></h5>
+        {{/if}}
+        {{#if heroes}}
+            <a href="/heroes/delete"><button class="btn btn-dark">Delete All Heroes</button></a>
+        {{/if}}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
