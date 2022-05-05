@@ -16,6 +16,9 @@ By Ymelda Monari
 ## Description
 This is an application that allows a user to recruit a team of superheros who fight any ills in the society and assigns the superheros to a squad of their choosing.The user has to define the hero's age,size and superpower they have. In the squad section the user has to input the maximum size of the squad,name and the cause they are fighting for.
 
+## Project resources
+This is a live link to the project 'https://heroes-panther.herokuapp.com/'
+
 
 ## Behaviour Driven Development (BDD)
 ### Input
