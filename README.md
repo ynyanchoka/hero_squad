@@ -25,7 +25,7 @@ This is an application that allows a user to recruit a team of superheros who fi
 
 ## Setup/Installation Requirements
 - Clone this repository using:
-  git clone 'https://github.com/ynyanchoka/Ceaser-cipher.git'
+  git clone 'https://github.com/ynyanchoka/hero_squad.git'
 - Navigate to the directory:
   cd hero_squad
 - Open the directory with your preferred text editor.
