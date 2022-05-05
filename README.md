@@ -22,13 +22,13 @@ This is a live link to the project 'https://heroes-panther.herokuapp.com/'
 
 ## Behaviour Driven Development (BDD)
 ### Input
-- User fills a form that specifies the hero's details
+- User fills a form that specifies the hero's details and squad they belong to.
 ### Output
-- Output is stored in a database.
+- Output is stored in a database is displayed.
 
 ## Setup/Installation Requirements
 - Clone this repository using:
-  git clone 'https://github.com/ynyanchoka/Ceaser-cipher.git'
+  git clone 'https://github.com/ynyanchoka/hero_squad.git'
 - Navigate to the directory:
   cd hero_squad
 - Open the directory with your preferred text editor.
