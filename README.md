@@ -28,7 +28,7 @@ This is a live link to the project 'https://heroes-panther.herokuapp.com/'
 
 ## Setup/Installation Requirements
 - Clone this repository using:
-  git clone 'https://github.com/ynyanchoka/Ceaser-cipher.git'
+  git clone 'https://github.com/ynyanchoka/hero_squad.git'
 - Navigate to the directory:
   cd hero_squad
 - Open the directory with your preferred text editor.
